@@ -1,5 +1,9 @@
 package co.samyu.academy.lab;
 
+import co.samyu.academy.lab.domain.User;
+import co.samyu.academy.lab.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -11,12 +15,18 @@ import org.springframework.context.annotation.ComponentScan;
 
 @EnableAutoConfiguration
 @ComponentScan
-//@ConfigurationProperties(value = "application-${profile}.properties")
 @ConfigurationProperties
-public class App {
+public class App implements CommandLineRunner {
+
+    @Autowired
+    private UserRepository userRepository;
+
     public static void main(String[] args) {
-        System.out.println(args);
         SpringApplication.run(App.class);
     }
 
+    @Override
+    public void run(String... strings) throws Exception {
+        userRepository.save(new User());
+    }
 }
