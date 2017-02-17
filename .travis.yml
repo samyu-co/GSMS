@@ -2,12 +2,14 @@ language: java
 jdk:
 - oraclejdk8
 sudo: false
-install: /bin/true
+install: "/bin/true"
 script:
 - mvn clean
 - mvn package -Pheroku -DskipTests=true
 deploy:
   provider: heroku
-  app: gsms-web
   api_key:
-    secure: CvRNU75n9JdWvjArKttNfgIYD2fYqZcvaocNsU6LrvAUz4srJPh3WlGw8p9fYcBczlt0pBKXmA8zE60lvwEbDsXxXBFYuVf5F732lj8wW+HR+kpbJ5Dw9GmuVvERh8wV72o9h65pkTd7P3IXTNrw+CrcDKChIt5eZdBqsp7R/plbJX2+1js7Xr0Fn99/hyPhMOc8sL3tPt9ZNNkfQpWDqV/Z4BHyT7exUfjsYNa8X1Qh+QaCA0e6I3wckjpQTPoaarTivq4U+lLM0SQKXdjKSN1ED41o0655xIYX+yp7GpWEQ57H4xZUI6A7/QxPsYNZYnJFhA7NMd4whb/3+UyP/pUIij+5itT+AaijJGsZDAuY4zOzEq2ZYcownJfiRAnJ0q12udbfPMHxwF5yQvy0GDRJw0Sm0BGfFNtLCrYlXbOsOP24mjOJAzk1hLNZE5Z4cUhOutU51Cr1mGFpkimBbWSAA5OjHrfUVR7e7ZMl4ibLoaJHLJX/dooYVGcxOrepgcy+RUS/AcvhfMv95cL0aBtlbGtHlS71Yv6T3lBoKR3PM1PBZZPLR7R2j/PwKBqL1i+/+HPszOC0fcWfvCYxMvfx46IQwdTJYg4r/lxGQzNb6UZJv9uY1Oj+/Lv068/yN9mjQG+X6aarUOifL3FqtIeaLcK57YG5gkDw9hGSIKQ=
+    secure: saobksSEhMDaIfETvUiQkyBDFQ/s/UAknhHEjHsBJ9uf5PVj3jj5Z1X+GP0+OPVtUUa5epfFhpwCRheVPQ8stELTa7JmZhGprkYJGR0oKRWZAupZI6KHnEWzWr7vYpdW4zwZT29FRsSiT2XngAp1BJNAUciAXA5Ov2SRiSTj0Ygj5BnVdCQBf3Wp6nbzhLQikfgKPu8H1fziBt/CEMSt80ELLMPUGhhji3FFZjGPtDq6bLOww0TlCzPB4N9FroXCnYswCVKRfJ5hM63jY2l8A/4ObHRNrzFmQ+A1B2MmBNowg8DARKo96oK4kfG+cuN7yMJCZ3kqMGc+2LsxRsXqkJl8bFIa43HzgIHqDgrSQCiA57AG0AC5BDqY5YgH/qv5bVFxkx/qivc8Hk0q5fOVnq+QgFCinDxGPYNZHSNDjvdy9phAhaf1uwEHH1zK3MjENlkmfedzbOSy6j6GQz69F7pmi49BOkhfKO0H7fuWagS2CXoNg95rh2xX9RFfA10hkj1MYxIElHXKbtFN8d4aDfElyodP1ASiIn5fPzAU+QLBUQ4dDBZdEj7FoyrTUC+msFYo7nC9EFVgDYzQNQrh+QGFHX0h17Omxh6kVrBvwC6sm7whW79bNfY3KmtjIiYMBRJ2a/13pQo6Hl2oOG++t34eku+J9W+A+vxLVRFKUkQ=
+  app: gsms-web
+  on:
+    repo: samyu-co/GSMS
