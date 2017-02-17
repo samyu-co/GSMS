@@ -19,10 +19,11 @@ import java.util.Set;
  */
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User extends AbstractAuditingEntity {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @NotNull
