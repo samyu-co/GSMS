@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar --port $PORT target/*.jar
+web: java -jar target/gsms-web.jar --spring.profiles.active=heroku --server.port=8080 --metrics.jmx.enabled=false --spring.datasource.jmx-enabled=false --spring.jmx.enabled=false --management.security.enabled=false --endpoints.jmx.enabled=false

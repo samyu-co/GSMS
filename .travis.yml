@@ -5,7 +5,7 @@ sudo: false
 install: "/bin/true"
 script:
 - mvn clean
-- mvn package -Pheroku -DskipTests=true
+- mvn package --spring.profiles.active=heroku -DskipTests=true
 deploy:
   provider: heroku
   api_key:

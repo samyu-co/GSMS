@@ -12,6 +12,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.core.env.Environment;
 
 import java.time.ZonedDateTime;
 import java.util.HashSet;
@@ -30,9 +31,13 @@ public class App implements CommandLineRunner {
     private UserRepository userRepository;
 
     @Autowired
+    private Environment env;
+
+    @Autowired
     private AuthorityRepository authorityRepository;
 
     public static void main(String[] args) {
+
         SpringApplication app = new SpringApplication(App.class);
         app.setBannerMode(Banner.Mode.OFF);
         app.run(args);
